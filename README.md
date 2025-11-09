@@ -46,7 +46,7 @@
 [![AI 推理提供商](https://img.shields.io/badge/AI%20推理提供商-412991?logo=openai&logoColor=white)](#ai-推理提供商)
 [![容器注册表](https://img.shields.io/badge/容器注册表-%23007EC6.svg?logo=docker&logoColor=white)](#容器注册表)
 
-超高性能、安全的一站式开发者资源加速引擎，其性能远超传统加速器，提供跨多个平台的统一高效的加速体验，涵盖代码储存库、包管理、AI 推理 API、容器镜像、模型及数据集等。
+面向开发者资源的超高性能、安全、一体化加速引擎，其性能显著优于传统解决方案，为代码存储库、软件包注册表、AI 推理 API、容器镜像、模型、数据集及更多资源提供统一且高效的加速。
 
 技术深度解析文章已发布：**[《深入剖析 Xget：一个高性能、多协议、高安全性的开发者资源加速引擎》](https://blog.xi-xu.me/2025/10/07/deep-dive-into-xget-technology.html)**。
 
@@ -703,6 +703,7 @@ Xget 支持多个容器注册表，使用 `cr/[容器注册表前缀]` 格式：
 
 | 容器注册表 | 容器注册表前缀 | 原始 URL 格式 | 加速 URL 格式 |
 |----------|------|--------------|--------------|
+| Docker Hub | `docker` | `https://registry-1.docker.io/...` | `https://xget.xi-xu.me/cr/docker/...` |
 | Quay.io | `quay` | `https://quay.io/...` | `https://xget.xi-xu.me/cr/quay/...` |
 | 谷歌容器注册表 | `gcr` | `https://gcr.io/...` | `https://xget.xi-xu.me/cr/gcr/...` |
 | 微软容器注册表 | `mcr` | `https://mcr.microsoft.com/...` | `https://xget.xi-xu.me/cr/mcr/...` |
@@ -721,6 +722,18 @@ Xget 支持多个容器注册表，使用 `cr/[容器注册表前缀]` 格式：
 | Gitpod 注册表 | `gitpod` | `https://registry.gitpod.io/...` | `https://xget.xi-xu.me/cr/gitpod/...` |
 
 ```url
+# Docker Hub 原始 URL（官方镜像）
+https://registry-1.docker.io/v2/library/nginx/manifests/latest
+
+# 转换后（添加 cr/docker 前缀）
+https://xget.xi-xu.me/cr/docker/v2/nginx/manifests/latest
+
+# Docker Hub 原始 URL（用户镜像）
+https://registry-1.docker.io/v2/nginxinc/nginx-unprivileged/manifests/latest
+
+# 转换后（添加 cr/docker 前缀）
+https://xget.xi-xu.me/cr/docker/v2/nginxinc/nginx-unprivileged/manifests/latest
+
 # GitHub 容器注册表原始 URL
 https://ghcr.io/v2/nginxinc/nginx-unprivileged/manifests/latest
 
@@ -2334,58 +2347,33 @@ sudo systemctl restart containerd
 
 ## 🚀 部署
 
-### Cloudflare Workers
+### 部署步骤
 
-[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/xixu-me/Xget)
+1. **fork 本存储库**：[Fork xixu-me/Xget](https://github.com/xixu-me/Xget/fork)
 
-**Xget 专为 Cloudflare Workers 设计并优化**，提供最佳的性能和体验：
+2. **获取 Cloudflare 凭证**：
+   - 访问[帐户 API 令牌](https://dash.cloudflare.com/?to=/:account/api-tokens)创建并记录 API 令牌，使用“编辑 Cloudflare Workers”模板
+   - 访问 [Workers 和 Pages](https://dash.cloudflare.com/?to=/:account/workers-and-pages) 记录 Account ID
 
-- **💰 成本优势**：除了注册域名的费用外，在大多数情况下是免费的
-- **🚀 性能最高**：全球边缘节点，响应速度最快
-- **🔧 维护简单**：无需服务器管理，自动扩展和更新
-- **🛡️ 安全可靠**：内置 DDoS 防护和安全特性
+3. **配置 GitHub Secrets**：
+   - 进入你的 GitHub 存储库 → Settings → Secrets and variables → Actions
+   - 添加以下 Secrets：
+     - `CLOUDFLARE_API_TOKEN`：你的 API 令牌
+     - `CLOUDFLARE_ACCOUNT_ID`：你的 Account ID
 
-#### 部署步骤
+4. **触发部署**：
+   - 推送代码到 `main` 分支会自动触发部署
+   - 仅修改文档文件（`.md`）、`LICENSE`、`.gitignore` 等不会触发部署
+   - 也可以在 GitHub Actions 页面手动触发部署
 
-1. **注册 Cloudflare 账户**：访问 [Cloudflare Workers](https://workers.cloudflare.com/) 并注册账户
-
-2. **安装 Wrangler CLI**：
-
-   ```bash
-   npm install -g wrangler
-   wrangler login
-   ```
-
-3. **克隆存储库**：
-
-   ```bash
-   git clone https://github.com/xixu-me/Xget.git
-   cd Xget
-   npm install
-   ```
-
-4. **配置项目**：
-   编辑 `wrangler.toml` 文件，修改 `name` 字段为你的 Worker 名称：
-
-   ```toml
-   name = "your-xget-worker"
-   ```
-
-5. **部署到 Cloudflare Workers**：
-
-   ```bash
-   npm run deploy
-   ```
-
-6. **绑定自定义域名**（可选）：
-   在 Cloudflare Workers 控制台中绑定你的自定义域名
+5. **绑定自定义域名**（可选）：在 Cloudflare Workers 控制台中绑定你的自定义域名
 
 部署完成后，你的 Xget 服务将在以下地址可用：
 
 - Worker 域名：`your-worker-name.your-subdomain.workers.dev`
 - 自定义域名：`your-domain.com`（如果已绑定）
 
-#### 环境变量配置
+### 环境变量配置
 
 你可以在 Cloudflare Workers 控制台中设置以下环境变量来自定义配置：
 
@@ -2558,6 +2546,8 @@ npx wrangler dev --log-level debug
 - **赞助**: [赞助 URL](https://xi-xu.me/#sponsorships)
 
 ## 📝 许可证
+
+版权所有 &copy; Xi Xu。
 
 本存储库采用 GPL-3.0 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情。
 
