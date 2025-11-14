@@ -1,15 +1,19 @@
-# Xget
+<div align="center">
 
-***[English](README.en.md)***
+# 🚀 Xget
 
-<a href="https://trendshift.io/repositories/14768" target="_blank"><img src="https://trendshift.io/api/badge/repositories/14768" alt="xixu-me%2FXget | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
+[![Cloudflare Workers](https://img.shields.io/badge/Cloudflare%20Workers-F38020?&logo=cloudflare&logoColor=white)](#-部署)
+
+[![Chromium](https://img.shields.io/badge/Chromium-4285F4?logo=googlechrome&logoColor=white)](#-生态系统集成)
+[![Firefox](https://img.shields.io/badge/Firefox-582ACB?logo=Firefox&logoColor=white)](#-生态系统集成)
 
 [![Ask Zread](https://img.shields.io/badge/Ask_Zread-_.svg?style=flat&color=00b0aa&labelColor=000000&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTQuOTYxNTYgMS42MDAxSDIuMjQxNTZDMS44ODgxIDEuNjAwMSAxLjYwMTU2IDEuODg2NjQgMS42MDE1NiAyLjI0MDFWNC45NjAxQzEuNjAxNTYgNS4zMTM1NiAxLjg4ODEgNS42MDAxIDIuMjQxNTYgNS42MDAxSDQuOTYxNTZDNS4zMTUwMiA1LjYwMDEgNS42MDE1NiA1LjMxMzU2IDUuNjAxNTYgNC45NjAxVjIuMjQwMUM1LjYwMTU2IDEuODg2NjQgNS4zMTUwMiAxLjYwMDEgNC45NjE1NiAxLjYwMDFaIiBmaWxsPSIjZmZmIi8%2BCjxwYXRoIGQ9Ik00Ljk2MTU2IDEwLjM5OTlIMi4yNDE1NkMxLjg4ODEgMTAuMzk5OSAxLjYwMTU2IDEwLjY4NjQgMS42MDE1NiAxMS4wMzk5VjEzLjc1OTlDMS42MDE1NiAxNC4xMTM0IDEuODg4MSAxNC4zOTk5IDIuMjQxNTYgMTQuMzk5OUg0Ljk2MTU2QzUuMzE1MDIgMTQuMzk5OSA1LjYwMTU2IDE0LjExMzQgNS42MDE1NiAxMy43NTk5VjExLjAzOTlDNS42MDE1NiAxMC42ODY0IDUuMzE1MDIgMTAuMzk5OSA0Ljk2MTU2IDEwLjM5OTlaIiBmaWxsPSIjZmZmIi8%2BCjxwYXRoIGQ9Ik0xMy43NTg0IDEuNjAwMUgxMS4wMzg0QzEwLjY4NSAxLjYwMDEgMTAuMzk4NCAxLjg4NjY0IDEwLjM5ODQgMi4yNDAxVjQuOTYwMUMxMC4zOTg0IDUuMzEzNTYgMTAuNjg1IDUuNjAwMSAxMS4wMzg0IDUuNjAwMUgxMy43NTg0QzE0LjExMTkgNS42MDAxIDE0LjM5ODQgNS4zMTM1NiAxNC4zOTg0IDQuOTYwMVYyLjI0MDFDMTQuMzk4NCAxLjg4NjY0IDE0LjExMTkgMS42MDAxIDEzLjc1ODQgMS42MDAxWiIgZmlsbD0iI2ZmZiIvPgo8cGF0aCBkPSJNNCAxMkwxMiA0TDQgMTJaIiBmaWxsPSIjZmZmIi8%2BCjxwYXRoIGQ9Ik00IDEyTDEyIDQiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K&logoColor=ffffff)](https://zread.ai/xixu-me/Xget)
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/xixu-me/Xget)
 
-[![Chromium 扩展](https://img.shields.io/badge/Chromium%20扩展-4285F4?logo=googlechrome&logoColor=white)](#-生态系统集成)
-[![Firefox 扩展](https://img.shields.io/badge/Firefox%20扩展-582ACB?logo=Firefox&logoColor=white)](#-生态系统集成)
-[![Cloudflare Workers](https://img.shields.io/badge/Cloudflare%20Workers-F38020?&logo=cloudflare&logoColor=white)](#-部署)
+<a href="https://trendshift.io/repositories/14768" target="_blank"><img src="https://trendshift.io/api/badge/repositories/14768" alt="xixu-me%2FXget | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
+</div>
+
+***[English](README.en.md)***
 
 [![GitHub](https://img.shields.io/badge/GitHub-181717?&logo=github&logoColor=white)](#github)
 [![GitLab](https://img.shields.io/badge/GitLab-FC6D26?&logo=gitlab&logoColor=white)](#gitlab)
@@ -61,11 +65,9 @@
 
 ## 🎯 快速使用
 
-**预部署实例（不保证可靠性）：`xget.xi-xu.me`** - 开箱即用，无需部署！
+**预部署实例（不保证可靠性）：`xget.xi-xu.me`**
 
 **URL 转换器：**[**`xuc.xi-xu.me`**](https://xuc.xi-xu.me) - 一键转换任意支持平台的 URL 为 Xget 的加速格式！
-
-> **⚡ 立即体验极速下载**：无需注册，无需配置，直接使用即可感受飞一般的下载速度！
 
 ## 🌟 核心优势 - 为什么选择 Xget？
 
