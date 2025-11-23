@@ -2,11 +2,15 @@
 
 # Xget 🚀
 
-<a href="https://trendshift.io/repositories/14768" target="_blank"><img src="https://trendshift.io/api/badge/repositories/14768" alt="xixu-me%2FXget | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
+<a href="https://trendshift.io/repositories/14768" target="_blank"><img src="https://trendshift.io/api/badge/repositories/14768" alt="xixu-me%2FXget | Trendshift" width="250" height="55"/></a>
+<a href="https://www.producthunt.com/products/xget" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1039008" alt="Xget | Product Hunt" width="250" height="55" /></a>
 
-[![Cloudflare Workers](https://img.shields.io/badge/Cloudflare%20Workers-F38020?&logo=cloudflare&logoColor=white)](#-deployment)
+[![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?&logo=cloudflare&logoColor=white)](#deploy-to-cloudflare-workers)
+[![EdgeOne](https://img.shields.io/badge/EdgeOne-006EFF?&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAACNklEQVR4nJ1W7XHbMAx96ul/lQnCDapOUG3gdIIkG6QjdINOUGeDNhNYmUDuBHIWiNQF/PqDYAxDoMUGdzx+AXgAAQGqSKKAOgAbma8BXMn5DGAv4wlAv6qJ5KVxR3LkOR3NWu9HkcnqzF0EkoMDcsysLd8oOooAb0lOF7wqpYnkzRrgZkVJ8mp0jLFzotscYOC6ZyNjjLbOnTZI7weSjQc4ZoQmkjuSneIdMoADyR9iVKuB0qglWYOT0n9Uys/qPAD4ZHgfAXwzfO/6LLyxcTxbJEdufFi1aEk32l6Z+1Lhep1lQa1aVwI2O3wBsTIFxOoUADzVspgzQp6S1pztATRyvpG5lTNLTUVykssJwF91OQP4bATuAGzVngBexJD0vJW51/u5VpZc4VSUgViMLX1xlIUCoERNLoYE8Ns579S6chTngGYZh1oWjRGoEGOjKSAGP/HovqblDoiJtAfwLPv5xHnqCrbNeK3K8qX9juQDMx3CVpoesXLop7DeATF+2rsKsbo8oizD3zzsjLWk30RHw7N7R5V68/AgMUpeWg9bLLOxL/AniOw1Yp58t/FZi5+mzuFrJJY/Sb6qFzmmV9PMgzBsHUW/eN5gJwdk54Rm4YTXgHPx00p24qEGydFElb3e09nUbpXVuZ+oS/88Z62rJLMelHAJSDqf6LxWSXvS35/+Vr0SlqrPHsBXxOw/o5IGHDLKE4AucS8A7hG7zAIMACryv371WxkfxYhZFD8jFvt+TdE/deK28xBAUlEAAAAASUVORK5CYII=)](#deploy-to-edgeone-pages)
+[![Docker](https://img.shields.io/badge/Docker-2496ED?&logo=docker&logoColor=white)](#self-hosted-deployment)
+[![Podman](https://img.shields.io/badge/Podman-892CA0?&logo=podman&logoColor=white)](#self-hosted-deployment)
 [![Chromium](https://img.shields.io/badge/Chromium-4285F4?logo=googlechrome&logoColor=white)](#-ecosystem-integration)
-[![Firefox](https://img.shields.io/badge/Firefox-582ACB?logo=Firefox&logoColor=white)](#-ecosystem-integration)
+[![Firefox](https://img.shields.io/badge/Firefox-FF7139?logo=Firefox&logoColor=white)](#-ecosystem-integration)
 [![Ask Zread](https://img.shields.io/badge/Ask_Zread-_.svg?style=flat&color=00b0aa&labelColor=000000&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTQuOTYxNTYgMS42MDAxSDIuMjQxNTZDMS44ODgxIDEuNjAwMSAxLjYwMTU2IDEuODg2NjQgMS42MDE1NiAyLjI0MDFWNC45NjAxQzEuNjAxNTYgNS4zMTM1NiAxLjg4ODEgNS42MDAxIDIuMjQxNTYgNS42MDAxSDQuOTYxNTZDNS4zMTUwMiA1LjYwMDEgNS42MDE1NiA1LjMxMzU2IDUuNjAxNTYgNC45NjAxVjIuMjQwMUM1LjYwMTU2IDEuODg2NjQgNS4zMTUwMiAxLjYwMDEgNC45NjE1NiAxLjYwMDFaIiBmaWxsPSIjZmZmIi8%2BCjxwYXRoIGQ9Ik00Ljk2MTU2IDEwLjM5OTlIMi4yNDE1NkMxLjg4ODEgMTAuMzk5OSAxLjYwMTU2IDEwLjY4NjQgMS42MDE1NiAxMS4wMzk5VjEzLjc1OTlDMS42MDE1NiAxNC4xMTM0IDEuODg4MSAxNC4zOTk5IDIuMjQxNTYgMTQuMzk5OUg0Ljk2MTU2QzUuMzE1MDIgMTQuMzk5OSA1LjYwMTU2IDE0LjExMzQgNS42MDE1NiAxMy43NTk5VjExLjAzOTlDNS42MDE1NiAxMC42ODY0IDUuMzE1MDIgMTAuMzk5OSA0Ljk2MTU2IDEwLjM5OTlaIiBmaWxsPSIjZmZmIi8%2BCjxwYXRoIGQ9Ik0xMy43NTg0IDEuNjAwMUgxMS4wMzg0QzEwLjY4NSAxLjYwMDEgMTAuMzk4NCAxLjg4NjY0IDEwLjM5ODQgMi4yNDAxVjQuOTYwMUMxMC4zOTg0IDUuMzEzNTYgMTAuNjg1IDUuNjAwMSAxMS4wMzg0IDUuNjAwMUgxMy43NTg0QzE0LjExMTkgNS42MDAxIDE0LjM5ODQgNS4zMTM1NiAxNC4zOTg0IDQuOTYwMVYyLjI0MDFDMTQuMzk4NCAxLjg4NjY0IDE0LjExMTkgMS42MDAxIDEzLjc1ODQgMS42MDAxWiIgZmlsbD0iI2ZmZiIvPgo8cGF0aCBkPSJNNCAxMkwxMiA0TDQgMTJaIiBmaWxsPSIjZmZmIi8%2BCjxwYXRoIGQ9Ik00IDEyTDEyIDQiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K&logoColor=ffffff)](https://zread.ai/xixu-me/Xget)
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/xixu-me/Xget)
 
@@ -20,8 +24,8 @@
 [![Codeberg](https://img.shields.io/badge/Codeberg-2185D0?&logo=codeberg&logoColor=white)](#codeberg)
 [![SourceForge](https://img.shields.io/badge/SourceForge-FF6600?&logo=sourceforge&logoColor=white)](#sourceforge)
 [![AOSP](https://img.shields.io/badge/AOSP-3DDC84?&logo=android&logoColor=white)](#aosp-android-open-source-project)
-[![Hugging Face](https://img.shields.io/badge/Hugging%20Face-FFD21E?&logo=huggingface&logoColor=white)](#hugging-face-mirror)
-[![Civitai](https://img.shields.io/badge/Civitai-0066CC)](#civitai-ai-model-platform)
+[![Hugging Face](https://img.shields.io/badge/Hugging%20Face-FFD21E?&logo=huggingface&logoColor=black)](#hugging-face-mirror)
+[![Civitai](https://img.shields.io/badge/Civitai-1971C2)](#civitai-ai-model-platform)
 [![npm](https://img.shields.io/badge/npm-CB3837?logo=npm&logoColor=white)](#npm-package-acceleration)
 [![PyPI](https://img.shields.io/badge/PyPI-3775A9?logo=pypi&logoColor=white)](#python-package-acceleration)
 [![conda](https://img.shields.io/badge/conda-44A833?logo=anaconda&logoColor=white)](#conda-package-acceleration)
@@ -29,9 +33,9 @@
 [![Apache](https://img.shields.io/badge/Apache-D22128?logo=apache&logoColor=white)](#apache-software-download-acceleration)
 [![Gradle](https://img.shields.io/badge/Gradle-02303A?logo=gradle&logoColor=white)](#gradle-package-acceleration)
 [![Homebrew](https://img.shields.io/badge/Homebrew-FBB040?logo=homebrew&logoColor=black)](#homebrew-package-acceleration)
-[![RubyGems](https://img.shields.io/badge/RubyGems-CC342D?logo=rubygems&logoColor=white)](#ruby-package-acceleration)
+[![RubyGems](https://img.shields.io/badge/RubyGems-E9573F?logo=rubygems&logoColor=white)](#ruby-package-acceleration)
 [![CRAN](https://img.shields.io/badge/CRAN-276DC3?logo=r&logoColor=white)](#r-package-acceleration)
-[![CPAN](https://img.shields.io/badge/CPAN-39457E?logo=perl&logoColor=white)](#perl-package-acceleration)
+[![CPAN](https://img.shields.io/badge/CPAN-0073A1?logo=perl&logoColor=white)](#perl-package-acceleration)
 [![CTAN](https://img.shields.io/badge/CTAN-008080?logo=latex&logoColor=white)](#texlatex-package-acceleration)
 [![Go](https://img.shields.io/badge/Go-00ADD8?logo=go&logoColor=white)](#go-module-acceleration)
 [![NuGet](https://img.shields.io/badge/NuGet-004880?logo=nuget&logoColor=white)](#nuget-package-acceleration)
@@ -39,19 +43,34 @@
 [![Packagist](https://img.shields.io/badge/Packagist-F28D1A?logo=packagist&logoColor=white)](#php-package-acceleration)
 [![Debian](https://img.shields.io/badge/Debian-A81D33?logo=debian&logoColor=white)](#debianubuntu-apt-configuration)
 [![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?logo=ubuntu&logoColor=white)](#debianubuntu-apt-configuration)
-[![Fedora](https://img.shields.io/badge/Fedora-294172?logo=fedora&logoColor=white)](#fedora-dnf-configuration)
+[![Fedora](https://img.shields.io/badge/Fedora-51A2DA?logo=fedora&logoColor=white)](#fedora-dnf-configuration)
 [![Rocky Linux](https://img.shields.io/badge/Rocky%20Linux-10B981?logo=rockylinux&logoColor=white)](#rocky-linux-dnf-configuration)
 [![openSUSE](https://img.shields.io/badge/openSUSE-73BA25?logo=opensuse&logoColor=white)](#opensuse-zypper-configuration)
 [![Arch Linux](https://img.shields.io/badge/Arch%20Linux-1793D1?logo=archlinux&logoColor=white)](#arch-linux-pacman-configuration)
 [![arXiv](https://img.shields.io/badge/arXiv-B31B1B?logo=arxiv&logoColor=white)](#arxiv-paper-download)
 [![F-Droid](https://img.shields.io/badge/F--Droid-1976D2?logo=f-droid&logoColor=white)](#f-droid-repository-mirror)
-[![Jenkins](https://img.shields.io/badge/Jenkins-D33833?logo=jenkins&logoColor=white)](#jenkins-plugin-download)
-[![AI Inference Providers](https://img.shields.io/badge/AI%20Inference%20Providers-412991?logo=openai&logoColor=white)](#ai-inference-providers)
+[![Jenkins](https://img.shields.io/badge/Jenkins-D24939?logo=jenkins&logoColor=white)](#jenkins-plugin-download)
 [![Container Registries](https://img.shields.io/badge/Container%20Registries-%23007EC6.svg?logo=docker&logoColor=white)](#container-registries)
+[![AI Inference Providers](https://img.shields.io/badge/AI%20Inference%20Providers-412991?logo=openai&logoColor=white)](#ai-inference-providers)
 
-Ultra-high-performance, secure, all-in-one acceleration engine for developer resources that significantly outperforms traditional solutions, delivering unified, efficient acceleration across code repositories, package registries, AI inference APIs, container images, models, datasets, and more.
+Ultra-high-performance, secure, all-in-one acceleration engine for developer resources that significantly outperforms traditional solutions, delivering unified, efficient acceleration across code repositories, model and dataset hubs, package registries, container registries, AI inference providers, and more.
 
 In-depth technical analysis article published: ***[Deep Dive into Xget: A High-Performance, Multi-Protocol, and Secure Acceleration Engine for Developer Resources](https://blog.xi-xu.me/2025/10/07/deep-dive-into-xget-technology-en.html)***.
+
+## 💝 Sponsors
+
+<p align="center" style="display: flex; justify-content: center; align-items: center; gap: 24px;">
+  <a href="https://www.digitalocean.com/?refcode=7efe110ca23f">
+    <img src="https://opensource.nyc3.cdn.digitaloceanspaces.com/attribution/assets/PoweredByDO/DO_Powered_by_Badge_blue.svg"
+         alt="Powered by DigitalOcean"
+         height="55">
+  </a>
+  <a href="https://dartnode.com">
+    <img src="https://dartnode.com/branding/DN-Open-Source-sm.png"
+         alt="Powered by DartNode"
+         height="55">
+  </a>
+</p>
 
 ## 🎯 Quick Start
 
@@ -72,7 +91,7 @@ In-depth technical analysis article published: ***[Deep Dive into Xget: A High-P
 
 ### 🌐 Deep Multi-Platform Integration
 
-- **All-in-One Multi-Platform Support**: Unified support for code repositories, package managers, AI inference providers, container registries, model and dataset hosting platforms
+- **All-in-One Multi-Platform Support**: Unified support for mainstream platforms in various development scenarios
 - **Intelligent Recognition and Conversion**: Automatically recognizes platform prefixes and converts to correct URL structures for target platforms
 - **Consistent Acceleration Experience**: Enjoy unified and stable ultra-fast download experience regardless of file type or source
 
@@ -172,8 +191,8 @@ Using the pre-deployed instance **`xget.xi-xu.me`** or your own deployed instanc
 | arXiv | `arxiv` | `https://arxiv.org/...` | `https://xget.xi-xu.me/arxiv/...` |
 | F-Droid | `fdroid` | `https://f-droid.org/...` | `https://xget.xi-xu.me/fdroid/...` |
 | Jenkins Plugins | `jenkins` | `https://updates.jenkins.io/...` | `https://xget.xi-xu.me/jenkins/...` |
-| AI Inference Providers | `ip` | See [AI Inference Providers](#ai-inference-providers) | See [AI Inference Providers](#ai-inference-providers) |
 | Container Registries | `cr` | See [Container Registries](#container-registries) | See [Container Registries](#container-registries) |
+| AI Inference Providers | `ip` | See [AI Inference Providers](#ai-inference-providers) | See [AI Inference Providers](#ai-inference-providers) |
 
 ### Platform Conversion Examples
 
@@ -637,69 +656,6 @@ https://updates.jenkins.io/download/plugins/maven-plugin/3.27/maven-plugin.hpi
 https://xget.xi-xu.me/jenkins/download/plugins/maven-plugin/3.27/maven-plugin.hpi
 ```
 
-#### AI Inference Providers
-
-Xget supports API acceleration for many mainstream AI inference providers, using the `ip/[AI Provider Prefix]` format:
-
-| AI Inference Provider | Provider Prefix | Original URL Format | Accelerated URL Format |
-|----------------------|-----------------|---------------------|------------------------|
-| OpenAI | `openai` | `https://api.openai.com/...` | `https://xget.xi-xu.me/ip/openai/...` |
-| Anthropic | `anthropic` | `https://api.anthropic.com/...` | `https://xget.xi-xu.me/ip/anthropic/...` |
-| Gemini | `gemini` | `https://generativelanguage.googleapis.com/...` | `https://xget.xi-xu.me/ip/gemini/...` |
-| Vertex AI | `vertexai` | `https://aiplatform.googleapis.com/...` | `https://xget.xi-xu.me/ip/vertexai/...` |
-| Cohere | `cohere` | `https://api.cohere.ai/...` | `https://xget.xi-xu.me/ip/cohere/...` |
-| Mistral AI | `mistralai` | `https://api.mistral.ai/...` | `https://xget.xi-xu.me/ip/mistralai/...` |
-| xAI | `xai` | `https://api.x.ai/...` | `https://xget.xi-xu.me/ip/xai/...` |
-| GitHub Models | `githubmodels` | `https://models.github.ai/...` | `https://xget.xi-xu.me/ip/githubmodels/...` |
-| NVIDIA API | `nvidiaapi` | `https://integrate.api.nvidia.com/...` | `https://xget.xi-xu.me/ip/nvidiaapi/...` |
-| Perplexity | `perplexity` | `https://api.perplexity.ai/...` | `https://xget.xi-xu.me/ip/perplexity/...` |
-| Groq | `groq` | `https://api.groq.com/...` | `https://xget.xi-xu.me/ip/groq/...` |
-| Cerebras | `cerebras` | `https://api.cerebras.ai/...` | `https://xget.xi-xu.me/ip/cerebras/...` |
-| SambaNova | `sambanova` | `https://api.sambanova.ai/...` | `https://xget.xi-xu.me/ip/sambanova/...` |
-| Siray | `siray` | `https://api.siray.ai/...` | `https://xget.xi-xu.me/ip/siray/...` |
-| HF Inference | `huggingface` | `https://router.huggingface.co/...` | `https://xget.xi-xu.me/ip/huggingface/...` |
-| Together | `together` | `https://api.together.xyz/...` | `https://xget.xi-xu.me/ip/together/...` |
-| Replicate | `replicate` | `https://api.replicate.com/...` | `https://xget.xi-xu.me/ip/replicate/...` |
-| Fireworks | `fireworks` | `https://api.fireworks.ai/...` | `https://xget.xi-xu.me/ip/fireworks/...` |
-| Nebius | `nebius` | `https://api.studio.nebius.ai/...` | `https://xget.xi-xu.me/ip/nebius/...` |
-| Jina | `jina` | `https://api.jina.ai/...` | `https://xget.xi-xu.me/ip/jina/...` |
-| Voyage AI | `voyageai` | `https://api.voyageai.com/...` | `https://xget.xi-xu.me/ip/voyageai/...` |
-| Fal AI | `falai` | `https://fal.run/...` | `https://xget.xi-xu.me/ip/falai/...` |
-| Novita | `novita` | `https://api.novita.ai/...` | `https://xget.xi-xu.me/ip/novita/...` |
-| Burncloud | `burncloud` | `https://ai.burncloud.com/...` | `https://xget.xi-xu.me/ip/burncloud/...` |
-| OpenRouter | `openrouter` | `https://openrouter.ai/...` | `https://xget.xi-xu.me/ip/openrouter/...` |
-| Poe | `poe` | `https://api.poe.com/...` | `https://xget.xi-xu.me/ip/poe/...` |
-| Featherless AI | `featherlessai` | `https://api.featherless.ai/...` | `https://xget.xi-xu.me/ip/featherlessai/...` |
-| Hyperbolic | `hyperbolic` | `https://api.hyperbolic.xyz/...` | `https://xget.xi-xu.me/ip/hyperbolic/...` |
-
-```url
-# OpenAI API original URL
-https://api.openai.com/v1/chat/completions
-
-# Converted (add ip/openai prefix)
-https://xget.xi-xu.me/ip/openai/v1/chat/completions
-
-# Anthropic API original URL
-https://api.anthropic.com/v1/messages
-
-# Converted (add ip/anthropic prefix)
-https://xget.xi-xu.me/ip/anthropic/v1/messages
-
-# Gemini API original URL
-https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent
-
-# Converted (add ip/gemini prefix)
-https://xget.xi-xu.me/ip/gemini/v1beta/models/gemini-2.5-flash:generateContent
-
-# HF Inference API original URL
-https://router.huggingface.co/hf-inference/models/openai/whisper-large-v3
-
-# Converted (add ip/huggingface prefix)
-https://xget.xi-xu.me/ip/huggingface/hf-inference/models/openai/whisper-large-v3
-```
-
-For use cases, see [AI Inference API Acceleration](#ai-inference-api-acceleration).
-
 #### Container Registries
 
 Xget supports multiple container registries, using the `cr/[Registry Prefix]` format:
@@ -751,6 +707,69 @@ https://xget.xi-xu.me/cr/gcr/v2/distroless/base/manifests/latest
 ```
 
 For use cases, see [Container Image Acceleration](#container-image-acceleration).
+
+#### AI Inference Providers
+
+Xget supports API acceleration for many mainstream AI inference providers, using the `ip/[AI Provider Prefix]` format:
+
+| AI Inference Provider | Provider Prefix | Original URL Format | Accelerated URL Format |
+|----------------------|-----------------|---------------------|------------------------|
+| OpenAI | `openai` | `https://api.openai.com/...` | `https://xget.xi-xu.me/ip/openai/...` |
+| Anthropic | `anthropic` | `https://api.anthropic.com/...` | `https://xget.xi-xu.me/ip/anthropic/...` |
+| Gemini | `gemini` | `https://generativelanguage.googleapis.com/...` | `https://xget.xi-xu.me/ip/gemini/...` |
+| Vertex AI | `vertexai` | `https://aiplatform.googleapis.com/...` | `https://xget.xi-xu.me/ip/vertexai/...` |
+| Cohere | `cohere` | `https://api.cohere.ai/...` | `https://xget.xi-xu.me/ip/cohere/...` |
+| Mistral AI | `mistralai` | `https://api.mistral.ai/...` | `https://xget.xi-xu.me/ip/mistralai/...` |
+| xAI | `xai` | `https://api.x.ai/...` | `https://xget.xi-xu.me/ip/xai/...` |
+| GitHub Models | `githubmodels` | `https://models.github.ai/...` | `https://xget.xi-xu.me/ip/githubmodels/...` |
+| NVIDIA API | `nvidiaapi` | `https://integrate.api.nvidia.com/...` | `https://xget.xi-xu.me/ip/nvidiaapi/...` |
+| Perplexity | `perplexity` | `https://api.perplexity.ai/...` | `https://xget.xi-xu.me/ip/perplexity/...` |
+| Groq | `groq` | `https://api.groq.com/...` | `https://xget.xi-xu.me/ip/groq/...` |
+| Cerebras | `cerebras` | `https://api.cerebras.ai/...` | `https://xget.xi-xu.me/ip/cerebras/...` |
+| SambaNova | `sambanova` | `https://api.sambanova.ai/...` | `https://xget.xi-xu.me/ip/sambanova/...` |
+| Siray | `siray` | `https://api.siray.ai/...` | `https://xget.xi-xu.me/ip/siray/...` |
+| HF Inference | `huggingface` | `https://router.huggingface.co/...` | `https://xget.xi-xu.me/ip/huggingface/...` |
+| Together | `together` | `https://api.together.xyz/...` | `https://xget.xi-xu.me/ip/together/...` |
+| Replicate | `replicate` | `https://api.replicate.com/...` | `https://xget.xi-xu.me/ip/replicate/...` |
+| Fireworks | `fireworks` | `https://api.fireworks.ai/...` | `https://xget.xi-xu.me/ip/fireworks/...` |
+| Nebius | `nebius` | `https://api.studio.nebius.ai/...` | `https://xget.xi-xu.me/ip/nebius/...` |
+| Jina | `jina` | `https://api.jina.ai/...` | `https://xget.xi-xu.me/ip/jina/...` |
+| Voyage AI | `voyageai` | `https://api.voyageai.com/...` | `https://xget.xi-xu.me/ip/voyageai/...` |
+| Fal AI | `falai` | `https://fal.run/...` | `https://xget.xi-xu.me/ip/falai/...` |
+| Novita | `novita` | `https://api.novita.ai/...` | `https://xget.xi-xu.me/ip/novita/...` |
+| Burncloud | `burncloud` | `https://ai.burncloud.com/...` | `https://xget.xi-xu.me/ip/burncloud/...` |
+| OpenRouter | `openrouter` | `https://openrouter.ai/...` | `https://xget.xi-xu.me/ip/openrouter/...` |
+| Poe | `poe` | `https://api.poe.com/...` | `https://xget.xi-xu.me/ip/poe/...` |
+| Featherless AI | `featherlessai` | `https://api.featherless.ai/...` | `https://xget.xi-xu.me/ip/featherlessai/...` |
+| Hyperbolic | `hyperbolic` | `https://api.hyperbolic.xyz/...` | `https://xget.xi-xu.me/ip/hyperbolic/...` |
+
+```url
+# OpenAI API original URL
+https://api.openai.com/v1/chat/completions
+
+# Converted (add ip/openai prefix)
+https://xget.xi-xu.me/ip/openai/v1/chat/completions
+
+# Claude API original URL
+https://api.anthropic.com/v1/messages
+
+# Converted (add ip/anthropic prefix)
+https://xget.xi-xu.me/ip/anthropic/v1/messages
+
+# Gemini API original URL
+https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent
+
+# Converted (add ip/gemini prefix)
+https://xget.xi-xu.me/ip/gemini/v1beta/models/gemini-2.5-flash:generateContent
+
+# HF Inference API original URL
+https://router.huggingface.co/hf-inference/models/openai/whisper-large-v3
+
+# Converted (add ip/huggingface prefix)
+https://xget.xi-xu.me/ip/huggingface/hf-inference/models/openai/whisper-large-v3
+```
+
+For use cases, see [AI Inference API Acceleration](#ai-inference-api-acceleration).
 
 ## 🎯 Use Cases
 
@@ -1970,228 +1989,7 @@ pipeline {
 }
 ```
 
-### AI Inference API Acceleration
-
-#### OpenAI API
-
-```python
-import openai
-
-# Use Xget's OpenAI API
-client = openai.OpenAI(
-    api_key="your-api-key",
-    base_url="https://xget.xi-xu.me/ip/openai/v1"  # Use Xget
-)
-
-# Chat completion
-response = client.chat.completions.create(
-    model="gpt-4",
-    messages=[
-        {"role": "user", "content": "Hello, how are you?"}
-    ]
-)
-
-print(response.choices[0].message.content)
-```
-
-#### Anthropic API
-
-```python
-import anthropic
-
-# Use Xget's Anthropic API
-client = anthropic.Anthropic(
-    api_key="your-api-key",
-    base_url="https://xget.xi-xu.me/ip/anthropic"  # Use Xget
-)
-
-# Create message
-message = client.messages.create(
-    model="claude-3-sonnet-20240229",
-    max_tokens=1000,
-    messages=[
-        {"role": "user", "content": "Hello, Claude!"}
-    ]
-)
-
-print(message.content)
-```
-
-#### Gemini API
-
-```python
-import google.generativeai as genai
-
-# Configure API key
-genai.configure(api_key="your-api-key")
-
-# Use custom transport to configure Xget
-import requests
-
-class XgetTransport:
-    def __init__(self, base_url):
-        self.base_url = base_url
-
-    def request(self, method, url, **kwargs):
-        # Forward request to Xget
-        accelerated_url = url.replace("https://generativelanguage.googleapis.com",
-                                    "https://xget.xi-xu.me/ip/gemini")
-        return requests.request(method, accelerated_url, **kwargs)
-
-# Create model instance
-model = genai.GenerativeModel('gemini-pro')
-
-# Generate content
-response = model.generate_content("Write a brief introduction about artificial intelligence")
-print(response.text)
-```
-
-#### Multi-Provider Unified Interface
-
-```python
-import requests
-import json
-
-def call_ai_api(provider, endpoint, data, api_key):
-    """
-    Unified AI API calling function, supports multiple providers
-    """
-    headers = {
-        "Authorization": f"Bearer {api_key}",
-        "Content-Type": "application/json"
-    }
-
-    # Use Xget's accelerated URL
-    url = f"https://xget.xi-xu.me/ip/{provider}/{endpoint}"
-
-    response = requests.post(url, headers=headers, json=data)
-    return response.json()
-
-# Usage example
-providers = {
-    "openai": {
-        "endpoint": "v1/chat/completions",
-        "data": {
-            "model": "gpt-4",
-            "messages": [{"role": "user", "content": "Hello!"}]
-        }
-    },
-    "anthropic": {
-        "endpoint": "v1/messages",
-        "data": {
-            "model": "claude-3-sonnet-20240229",
-            "max_tokens": 1000,
-            "messages": [{"role": "user", "content": "Hello!"}]
-        }
-    },
-    "cohere": {
-        "endpoint": "v1/generate",
-        "data": {
-            "model": "command",
-            "prompt": "Hello!",
-            "max_tokens": 100
-        }
-    }
-}
-
-# Loop through different providers
-for provider, config in providers.items():
-    try:
-        result = call_ai_api(
-            provider=provider,
-            endpoint=config["endpoint"],
-            data=config["data"],
-            api_key="your-api-key"
-        )
-        print(f"{provider.title()} response: {result}")
-    except Exception as e:
-        print(f"Error calling {provider}: {e}")
-```
-
-#### Use in JavaScript/Node.js
-
-```javascript
-// OpenAI API acceleration
-import OpenAI from 'openai';
-
-const openai = new OpenAI({
-  apiKey: 'your-api-key',
-  baseURL: 'https://xget.xi-xu.me/ip/openai',  // Use Xget
-});
-
-async function chatWithGPT() {
-  const completion = await openai.chat.completions.create({
-    messages: [{ role: 'user', content: 'Hello!' }],
-    model: 'gpt-4',
-  });
-
-  console.log(completion.choices[0].message.content);
-}
-
-// Anthropic API acceleration
-import Anthropic from '@anthropic-ai/sdk';
-
-const anthropic = new Anthropic({
-  apiKey: 'your-api-key',
-  baseURL: 'https://xget.xi-xu.me/ip/anthropic',  // Use Xget
-});
-
-async function chatWithClaude() {
-  const message = await anthropic.messages.create({
-    model: 'claude-3-sonnet-20240229',
-    max_tokens: 1000,
-    messages: [{ role: 'user', content: 'Hello!' }],
-  });
-
-  console.log(message.content);
-}
-```
-
-#### Environment Variable Configuration
-
-```bash
-# Configure in .env file
-OPENAI_BASE_URL=https://xget.xi-xu.me/ip/openai
-ANTHROPIC_BASE_URL=https://xget.xi-xu.me/ip/anthropic
-GEMINI_BASE_URL=https://xget.xi-xu.me/ip/gemini
-COHERE_BASE_URL=https://xget.xi-xu.me/ip/cohere
-MISTRAL_AI_BASE_URL=https://xget.xi-xu.me/ip/mistralai
-GROQ_BASE_URL=https://xget.xi-xu.me/ip/groq
-```
-
-Then use in code:
-
-```python
-import os
-from openai import OpenAI
-
-# Read configuration from environment variables
-client = OpenAI(
-    api_key=os.getenv("OPENAI_API_KEY"),
-    base_url=os.getenv("OPENAI_BASE_URL")  # Automatically uses Xget
-)
-```
-
 ### Container Image Acceleration
-
-#### Docker Configuration
-
-```bash
-# Configure Docker to use Xget image acceleration
-# Edit /etc/docker/daemon.json (Linux) or ~/.docker/daemon.json (macOS/Windows)
-{
-  "registry-mirrors": [
-    "https://xget.xi-xu.me/cr/ghcr"
-  ]
-}
-
-# Restart Docker service
-sudo systemctl restart docker  # Linux
-# Or restart service in Docker Desktop
-
-# Verify configuration
-docker info | grep -A 10 "Registry Mirrors"
-```
 
 #### Pull Images Directly
 
@@ -2347,9 +2145,182 @@ podman pull xget.xi-xu.me/cr/ghcr/nginxinc/nginx-unprivileged:latest
 sudo systemctl restart containerd
 ```
 
+### AI Inference API Acceleration
+
+#### OpenAI API
+
+```python
+from openai import OpenAI
+
+client = OpenAI(
+    api_key="your-api-key",
+    base_url="https://xget.xi-xu.me/ip/openai/v1",  # Use Xget
+)
+
+response = client.responses.create(
+    model="gpt-5.1",
+    input="Hello, GPT!",
+)
+
+print(response.output_text)
+```
+
+#### Claude API
+
+```python
+from anthropic import Anthropic
+
+client = Anthropic(
+    api_key="your-api-key",
+    base_url="https://xget.xi-xu.me/ip/anthropic",  # Use Xget
+)
+
+message = client.messages.create(
+    model="claude-sonnet-4-5",
+    max_tokens=256,
+    messages=[
+        {
+            "role": "user",
+            "content": "Hello, Claude!",
+        }
+    ],
+)
+
+print(message.content[0].text)
+```
+
+#### Gemini API
+
+```python
+from google import genai
+from google.genai import types
+
+client = genai.Client(
+    api_key="your-api-key",
+    http_options=types.HttpOptions(base_url="https://xget.xi-xu.me/ip/gemini"),  # Use Xget
+)
+
+response = client.models.generate_content(
+    model="gemini-3-pro-preview",
+    contents="Hello, Gemini!",
+)
+
+print(response.text)
+```
+
+#### Multi-Provider Unified Interface
+
+```python
+from openai import OpenAI
+
+providers = [
+    ("Cohere",  "your-cohere-api-key",  "/cohere/compatibility/v1", "command-a-03-2025"),
+    ("Mistral", "your-mistral-api-key", "/mistralai/v1",            "mistral-medium-latest"),
+    ("xAI",     "your-xai-api-key",     "/xai/v1",                  "grok-4"),
+]
+
+for name, key, path, model in providers:
+    client = OpenAI(api_key=key, base_url="https://xget.xi-xu.me/ip" + path)  # Use Xget
+    response = client.chat.completions.create(
+        model=model,
+        messages=[{"role": "user", "content": f"Hello, who are you?"}],
+    )
+    print(name, "=>", response.choices[0].message.content)
+```
+
+#### Use in JavaScript/Node.js
+
+```javascript
+// OpenAI API acceleration
+import OpenAI from "openai";
+
+const openaiClient = new OpenAI({
+  apiKey: "your-openai-api-key",
+  baseURL: "https://xget.xi-xu.me/ip/openai/v1",  // Use Xget
+});
+
+async function chatWithGPT() {
+  const response = await openaiClient.responses.create({
+    model: "gpt-5.1",
+    input: "Hello, GPT!",
+  });
+
+  console.log(response.output_text);
+}
+
+// Claude API acceleration
+import Anthropic from "@anthropic-ai/sdk";
+
+const anthropicClient = new Anthropic({
+  apiKey: "your-claude-api-key",
+  baseURL: "https://xget.xi-xu.me/ip/anthropic",  // Use Xget
+});
+
+async function chatWithClaude() {
+  const message = await anthropicClient.messages.create({
+    model: "claude-sonnet-4-5",
+    max_tokens: 256,
+    messages: [
+      {
+        role: "user",
+        content: "Hello, Claude!",
+      },
+    ],
+  });
+
+  console.log(message.content[0].text);
+}
+
+// Gemini API acceleration
+import { GoogleGenAI } from "@google/genai";
+
+const geminiClient = new GoogleGenAI({
+  apiKey: "your-gemini-api-key",
+});
+
+async function chatWithGemini() {
+  const response = await geminiClient.models.generateContent({
+    model: "gemini-3-pro-preview",
+    contents: "Hello, Gemini!",
+    config: {
+      httpOptions: {
+        baseUrl: "https://xget.xi-xu.me/ip/gemini",  // Use Xget
+      },
+    },
+  });
+
+  console.log(response.text);
+}
+```
+
+#### Environment Variable Configuration
+
+```bash
+# Configure in .env file
+OPENAI_BASE_URL=https://xget.xi-xu.me/ip/openai
+ANTHROPIC_BASE_URL=https://xget.xi-xu.me/ip/anthropic
+GEMINI_BASE_URL=https://xget.xi-xu.me/ip/gemini
+COHERE_BASE_URL=https://xget.xi-xu.me/ip/cohere
+MISTRAL_AI_BASE_URL=https://xget.xi-xu.me/ip/mistralai
+GROQ_BASE_URL=https://xget.xi-xu.me/ip/groq
+```
+
+Then use in code:
+
+```python
+import os
+from openai import OpenAI
+
+# Read configuration from environment variables
+client = OpenAI(
+    api_key=os.getenv("OPENAI_API_KEY"),
+    base_url=os.getenv("OPENAI_BASE_URL")  # Automatically uses Xget
+)
+```
+
 ## 🚀 Deployment
 
-### Deployment Steps
+### Deploy to Cloudflare Workers
 
 1. **Fork this repository**: [Fork xixu-me/Xget](https://github.com/xixu-me/Xget/fork)
 
@@ -2359,7 +2330,7 @@ sudo systemctl restart containerd
 
 3. **Configure GitHub Secrets**:
    - Go to your GitHub repository → Settings → Secrets and variables → Actions
-   - Add the following Secrets:
+   - Add the following secrets:
      - `CLOUDFLARE_API_TOKEN`: Your API token
      - `CLOUDFLARE_ACCOUNT_ID`: Your Account ID
 
@@ -2370,22 +2341,157 @@ sudo systemctl restart containerd
 
 5. **Bind custom domain** (optional): Bind your custom domain in the Cloudflare Workers console
 
-After deployment completes, your Xget service will be available at:
+### Deploy to Cloudflare Pages
 
-- Worker domain: `your-worker-name.your-subdomain.workers.dev`
-- Custom domain: `your-domain.com` (if bound)
+1. **Fork this repository**: [Fork xixu-me/Xget](https://github.com/xixu-me/Xget/fork)
 
-### Environment Variable Configuration
+2. **Get Cloudflare credentials**:
+   - Visit [Account API tokens](https://dash.cloudflare.com/?to=/:account/api-tokens) to create and note an API token, using the "Edit Cloudflare Workers" template.
+   - Visit [Workers and Pages](https://dash.cloudflare.com/?to=/:account/workers-and-pages) to note the Account ID.
 
-You can set the following environment variables in the Cloudflare Workers console to customize configuration:
+3. **Configure GitHub Secrets**:
+   - Go to your GitHub repository → Settings → Secrets and variables → Actions
+   - Add the following secrets:
+     - `CLOUDFLARE_API_TOKEN`: Your API token
+     - `CLOUDFLARE_ACCOUNT_ID`: Your Account ID
 
-- `TIMEOUT_SECONDS`: Request timeout (default: 30)
-- `MAX_RETRIES`: Maximum retry count (default: 3)
-- `RETRY_DELAY_MS`: Retry delay time (default: 1000)
-- `CACHE_DURATION`: Cache duration (default: 1800)
-- `ALLOWED_METHODS`: Allowed HTTP methods (default: GET,HEAD)
-- `ALLOWED_ORIGINS`: Allowed CORS origins (default: *)
-- `MAX_PATH_LENGTH`: Maximum path length (default: 2048)
+4. **Trigger deployment**:
+   - The repository will automatically convert Workers code to Pages-compatible format and sync to the `pages` branch
+   - Pushing code to the `main` branch will automatically trigger sync and deployment workflows
+   - Modifying only documentation files (`.md`), `LICENSE`, `.gitignore`, etc. will not trigger deployment
+   - You can also manually trigger deployment in the GitHub Actions page
+
+5. **Bind custom domain** (optional): Bind your custom domain in the Cloudflare Pages console
+
+**Note**: The `pages` branch is automatically generated from the `main` branch. Do not manually edit the `pages` branch as it will be overwritten by the sync workflow.
+
+### Deploy to EdgeOne Pages
+
+1. **Fork this repository**: [Fork xixu-me/Xget](https://github.com/xixu-me/Xget/fork)
+
+2. **Get EdgeOne Pages API Token**:
+   - Visit [China EdgeOne Console](https://console.cloud.tencent.com/edgeone/pages?tab=api) or [International EdgeOne Console](https://console.tencentcloud.com/edgeone/pages?tab=api) to create and note an API Token
+
+3. **Configure GitHub Secrets**:
+   - Go to your GitHub repository → Settings → Secrets and variables → Actions
+   - Add the following secret:
+     - `EDGEONE_PAGES_API_TOKEN`: Your EdgeOne Pages API Token
+
+4. **Trigger deployment**:
+   - The repository will automatically convert Workers code to Pages-compatible format and sync to the `pages` branch
+   - Pushing code to the `main` branch will automatically trigger sync and deployment workflows
+   - Modifying only documentation files (`.md`), `LICENSE`, `.gitignore`, etc. will not trigger deployment
+   - You can also manually trigger deployment in the GitHub Actions page
+
+5. **Bind custom domain** (optional): Bind your custom domain in the EdgeOne Pages console
+
+**Note**: The `pages` branch is automatically generated from the `main` branch. Do not manually edit the `pages` branch as it will be overwritten by the sync workflow.
+
+### Self-Hosted Deployment
+
+If you prefer to run Xget on your own server, you can use Docker or Podman deployment:
+
+#### Using Pre-built Image
+
+Pull and run the pre-built image from GitHub Container Registry:
+
+**Using Docker:**
+
+```bash
+# Pull the latest image
+docker pull ghcr.io/xixu-me/xget:latest
+
+# Run the container
+docker run -d \
+  --name xget \
+  -p 8080:8080 \
+  ghcr.io/xixu-me/xget:latest
+```
+
+**Using Podman:**
+
+```bash
+# Pull the latest image
+podman pull ghcr.io/xixu-me/xget:latest
+
+# Run the container
+podman run -d \
+  --name xget \
+  -p 8080:8080 \
+  ghcr.io/xixu-me/xget:latest
+```
+
+#### Building Locally
+
+Build the container image from source:
+
+**Using Docker:**
+
+```bash
+# Clone the repository
+git clone https://github.com/xixu-me/Xget.git
+cd Xget
+
+# Build the image
+docker build -t xget:local .
+
+# Run the container
+docker run -d \
+  --name xget \
+  -p 8080:8080 \
+  xget:local
+```
+
+**Using Podman:**
+
+```bash
+# Clone the repository
+git clone https://github.com/xixu-me/Xget.git
+cd Xget
+
+# Build the image
+podman build -t xget:local .
+
+# Run the container
+podman run -d \
+  --name xget \
+  -p 8080:8080 \
+  xget:local
+```
+
+#### Using Docker Compose / Podman Compose
+
+Create a `docker-compose.yml` file:
+
+```yaml
+version: '3.8'
+
+services:
+  xget:
+    image: ghcr.io/xixu-me/xget:latest
+    container_name: xget
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+```
+
+**Using Docker Compose:**
+
+```bash
+docker-compose up -d
+```
+
+**Using Podman Compose:**
+
+```bash
+podman-compose up -d
+# Or use podman compose (Podman 4.0+)
+podman compose up -d
+```
+
+After deployment, Xget will run on port 8080.
+
+**Note**: Self-hosted deployment does not include global edge network acceleration. Performance depends on your server configuration and network environment.
 
 ## 🔧 Configuration
 

@@ -1,0 +1,188 @@
+name: Sync to Pages
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '**.md'
+      - 'LICENSE'
+      - '.gitignore'
+      - '.editorconfig'
+      - '.vscode/**'
+      - 'docs/**'
+      - '.prettierrc*'
+      - '.eslintrc*'
+      - '.github/ISSUE_TEMPLATE/**'
+      - '.github/PULL_REQUEST_TEMPLATE/**'
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  convert-and-sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v5
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Create temporary working directory
+        run: |
+          mkdir -p /tmp/pages-conversion
+          cd /tmp/pages-conversion
+
+      - name: Copy source code files only
+        run: |
+          # Copy only runtime-required files (no documentation, tests, or dev configs)
+          cp -r src /tmp/pages-conversion/
+          cp package.json /tmp/pages-conversion/
+          cp package-lock.json /tmp/pages-conversion/ 2>/dev/null || true
+          cp wrangler.toml /tmp/pages-conversion/
+          cp LICENSE /tmp/pages-conversion/
+
+      - name: Create Pages Function handler
+        run: |
+          mkdir -p /tmp/pages-conversion/functions
+          cat > /tmp/pages-conversion/functions/[[path]].js << 'EOF'
+          /**
+           * Xget - High-performance acceleration engine for developer resources
+           * Copyright (C) 2025 Xi Xu
+           *
+           * This program is free software: you can redistribute it and/or modify
+           * it under the terms of the GNU General Public License as published by
+           * the Free Software Foundation, either version 3 of the License, or
+           * (at your option) any later version.
+           *
+           * This program is distributed in the hope that it will be useful,
+           * but WITHOUT ANY WARRANTY; without even the implied warranty of
+           * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+           * GNU General Public License for more details.
+           *
+           * You should have received a copy of the GNU General Public License
+           * along with this program. If not, see <https://www.gnu.org/licenses/>.
+           */
+
+          import { handleRequest } from '../src/index.js';
+
+          /**
+           * Pages Function handler for all routes.
+           *
+           * This catch-all route handler processes all incoming requests to the Xget
+           * acceleration engine. It delegates request processing to the main handleRequest
+           * function from the Workers code, maintaining full compatibility with the
+           * existing implementation.
+           *
+           * The [[path]] syntax in the filename creates a catch-all route that matches
+           * any path, allowing this single function to handle all requests to the Pages
+           * application.
+           *
+           * @param {Object} context - Pages Function context
+           * @param {Request} context.request - The incoming HTTP request
+           * @param {Object} context.env - Environment variables and bindings (KV, secrets, etc.)
+           * @param {Object} context.params - Route parameters (path segments from [[path]])
+           * @param {Function} context.waitUntil - Extend function execution for background tasks
+           * @param {Function} context.next - Call next middleware in chain (not used here)
+           * @param {Object} context.data - Shared data between functions
+           * @returns {Promise<Response>} The HTTP response to return to the client
+           *
+           * @example
+           * // This is called automatically by Pages
+           * // Runtime invokes: onRequest(context)
+           * // Returns: Response with package data
+           *
+           * @example
+           * // Environment variables usage
+           * // wrangler.toml: [vars] TIMEOUT_SECONDS = "60"
+           * // context.env contains: { TIMEOUT_SECONDS: "60" }
+           * // handleRequest uses createConfig(env) to override defaults
+           */
+          export async function onRequest(context) {
+            // Extract request, env, and create an execution context compatible with Workers
+            const { request, env, waitUntil } = context;
+
+            // Create a minimal ExecutionContext-like object for compatibility
+            const ctx = {
+              waitUntil: waitUntil,
+              passThroughOnException: () => {
+                // Pages doesn't support passThroughOnException, so this is a no-op
+                console.warn('passThroughOnException is not supported in Pages Functions');
+              }
+            };
+
+            // Delegate to the main request handler
+            return handleRequest(request, env, ctx);
+          }
+          EOF
+
+      - name: Export handleRequest from src/index.js
+        run: |
+          cd /tmp/pages-conversion
+          # Add export statement before the default export at the end of the file
+          sed -i '/^export default {$/i\
+          export { handleRequest };' src/index.js
+
+      - name: Update wrangler.toml for Pages (remove observability)
+        run: |
+          cd /tmp/pages-conversion
+          # Remove observability section (Pages doesn't support it)
+          cat > wrangler.toml << 'EOF'
+          #:schema node_modules/wrangler/config-schema.json
+          name = "xget"
+          pages_build_output_dir = "."
+          compatibility_date = "2024-10-22"
+          compatibility_flags = ["nodejs_compat"]
+          EOF
+
+      - name: Update package.json for Pages
+        run: |
+          cd /tmp/pages-conversion
+          # Update deployment commands to use Pages
+          cat package.json | \
+          sed 's/"deploy": "wrangler deploy"/"deploy": "wrangler pages deploy ."/' | \
+          sed 's/"start": "wrangler dev"/"start": "wrangler pages dev ."/' \
+          > package.json.tmp && mv package.json.tmp package.json
+
+      - name: Initialize pages branch
+        run: |
+          cd /tmp/pages-conversion
+          git init
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b pages
+          git add .
+          git commit -m "Convert Workers to Pages
+
+          Auto-converted from main branch commit ${{ github.sha }}
+
+          Changes:
+          - Add functions/[[path]].js: Catch-all Pages Function handler
+          - Update src/index.js: Export handleRequest for Pages Function import
+          - Update wrangler.toml: Configure for Pages deployment (no observability)
+          - Update package.json: Change scripts to use Pages commands
+
+          Runtime files only (documentation, tests, and dev configs excluded)."
+
+      - name: Force push to pages branch
+        run: |
+          cd /tmp/pages-conversion
+          git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+          git push -f origin pages
+
+      - name: Clean up
+        if: always()
+        run: |
+          rm -rf /tmp/pages-conversion
