@@ -29,10 +29,17 @@ jobs:
           ref: pages
 
       - name: Deploy to Cloudflare Pages
+        id: deploy
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy . --project-name=xget --branch=${{ github.ref_name }}
+          command: pages deploy . --project-name=xget --branch=${{ github.ref_name }} --verbose
           wranglerVersion: "4.47.0"
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Print Wrangler Command Output
+        env:
+          CMD_OUTPUT: ${{ steps.deploy.outputs.command-output }}
+        run: |
+          echo "$CMD_OUTPUT"
