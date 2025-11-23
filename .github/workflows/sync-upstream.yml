@@ -33,11 +33,29 @@ jobs:
           git checkout main
           git merge --no-edit upstream/main || true
 
-      - name: Push to origin using GITHUB_TOKEN
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_ACTOR: ${{ github.actor }}
-          GITHUB_REPOSITORY: ${{ github.repository }}
+      - name: Detect workflow changes
+        id: detect
         run: |
-          git remote set-url origin "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git fetch origin main
+          CHANGED=$(git diff --name-only origin/main..HEAD || true)
+          if echo "$CHANGED" | grep -E '^\.github/workflows/'; then
+            echo "has_workflow_changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_workflow_changes=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Push to origin with token
+        if: steps.detect.outputs.has_workflow_changes == 'false' || secrets.WORKFLOW_TOKEN != ''
+        env:
+          WORKFLOW_TOKEN: ${{ secrets.WORKFLOW_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ACTOR: ${{ github.actor }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          TOKEN="${WORKFLOW_TOKEN:-$GITHUB_TOKEN}"
+          git remote set-url origin "https://${ACTOR}:${TOKEN}@github.com/${REPOSITORY}.git"
           git push origin main
+
+      - name: Skip push due to workflow changes without PAT
+        if: steps.detect.outputs.has_workflow_changes == 'true' && secrets.WORKFLOW_TOKEN == ''
+        run: echo "Workflow changes detected; set repository secret WORKFLOW_TOKEN with a PAT including 'workflow' scope to allow pushing."
