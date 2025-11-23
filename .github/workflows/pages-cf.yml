@@ -34,3 +34,5 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy . --project-name=xget --branch=${{ github.ref_name }}
+          wranglerVersion: "4.47.0"
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
